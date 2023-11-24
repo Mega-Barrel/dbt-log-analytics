@@ -1,0 +1,11 @@
+# Logging configuration
+dbt-logger:
+  version: 1.1
+  formatters:
+    kafka-logs:
+      format: "kafka logger - %(asctime)s - %(funcName)s - %(levelname)s - %(message)s"
+  file:
+      filename: 'logs/dbt_logger.logs'
+  root:
+    level: DEBUG
+    handlers: [console]
