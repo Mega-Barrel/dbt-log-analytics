@@ -1,0 +1,2 @@
+kafka logger - 2023-11-25 12:32:14,581 - INFO - Starting kafka consumer
+kafka logger - 2023-11-25 12:32:14,581 - INFO - Consuming data from api_logs topic
