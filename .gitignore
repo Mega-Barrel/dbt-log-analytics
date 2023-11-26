@@ -1,0 +1,5 @@
+# pycache folders
+__pycache__
+
+# environment folder
+dbt-log-env/
