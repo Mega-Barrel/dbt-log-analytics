@@ -1,6 +1,7 @@
 """Kafka producer"""
 
 # System packages
+import os
 import time
 import json
 from random import choice
@@ -12,9 +13,12 @@ from datetime import (
 # Installed packages
 from faker import Faker
 from kafka import KafkaProducer # pylint: disable=E0611
+from python_path import PythonPath
 
-# code imports
-from backend.common.dbt_logger import logger
+path = os.path.join("..", "..")
+
+with PythonPath(path, relative_to = __file__):
+    from backend.common.dbt_logger import logger
 
 fake = Faker()
 
