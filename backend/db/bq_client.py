@@ -12,7 +12,3 @@ def client_oauth(file_path):
 
     # return obj
     return client
-
-# for data in query_job.result():
-#     print(data)
-#     print()
