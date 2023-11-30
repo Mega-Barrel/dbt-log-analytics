@@ -3,3 +3,9 @@ __pycache__
 
 # environment folder
 dbt-log-env/
+
+# credentials
+.env
+
+# BigQuery Service Account Creds
+dbt_bigquery_creds.json
