@@ -1,2 +1,33 @@
 kafka logger - 2023-11-25 12:32:14,581 - INFO - Starting kafka consumer
 kafka logger - 2023-11-25 12:32:14,581 - INFO - Consuming data from api_logs topic
+kafka logger - 2023-11-30 15:57:07,350 - INFO - Starting kafka consumer
+kafka logger - 2023-11-30 15:57:07,365 - INFO - Consuming data from api_logs topic
+kafka logger - 2023-11-30 15:57:19,202 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:19,233 - INFO - Data Produced with API_REQ_NO: 2
+kafka logger - 2023-11-30 15:57:19,233 - INFO - Consuming data from api_logs topic
+kafka logger - 2023-11-30 15:57:24,237 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:24,237 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:24,237 - INFO - Data Produced with API_REQ_NO: 3
+kafka logger - 2023-11-30 15:57:24,237 - INFO - Consuming data from api_logs topic
+kafka logger - 2023-11-30 15:57:29,240 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:29,240 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:29,240 - INFO - Data Produced with API_REQ_NO: 4
+kafka logger - 2023-11-30 15:57:29,240 - INFO - Consuming data from api_logs topic
+kafka logger - 2023-11-30 15:57:34,241 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:34,242 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:34,243 - INFO - Data Produced with API_REQ_NO: 5
+kafka logger - 2023-11-30 15:57:39,257 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:39,257 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:39,263 - INFO - Data Produced with API_REQ_NO: 6
+kafka logger - 2023-11-30 15:57:44,275 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:44,275 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:44,280 - INFO - Data Produced with API_REQ_NO: 7
+kafka logger - 2023-11-30 15:57:49,294 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:49,294 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:49,299 - INFO - Data Produced with API_REQ_NO: 8
+kafka logger - 2023-11-30 15:57:54,312 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:54,312 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:54,318 - INFO - Data Produced with API_REQ_NO: 9
+kafka logger - 2023-11-30 15:57:59,323 - INFO - Sleeping for 5 second
+kafka logger - 2023-11-30 15:57:59,323 - INFO - Fake data generated.
+kafka logger - 2023-11-30 15:57:59,330 - INFO - Data Produced with API_REQ_NO: 10
