@@ -79,11 +79,11 @@ while start_date <= end_date:
     producer.send(KAFKA_TOPIC, data)
     producer.flush()
 
+    logger.info("Data Produced with API_REQ_NO: %s", API_REQ_NO)
+
     # Increment the date and time by one minute
     start_date += timedelta(minutes=1)
     API_REQ_NO += 1
-
-    logger.info("Data Produced with API_REQ_NO: %s", API_REQ_NO)
 
     # sleep for 1 second
     time.sleep(5)
