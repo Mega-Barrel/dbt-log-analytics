@@ -3,6 +3,7 @@
 import os
 from python_path import PythonPath
 
+from dotenv import load_dotenv
 from google.cloud import bigquery #pylint: disable=E0401
 from google.cloud.exceptions import NotFound
 
@@ -37,7 +38,9 @@ def create_table(client, table_name, dataset_name):
     return table
 
 if __name__ == '__main__':
+    load_dotenv()
+
     bq_client = client_oauth('dbt_bigquery_creds.json')
-    DATASET_ID = 'dbt_log_analytics'
+    DATASET_ID = os.environ.get('PROJECT_ID')
     TABLE_NAME = 'raw_logs'
     tlb = create_table(client=bq_client, dataset_name=DATASET_ID, table_name=TABLE_NAME)
