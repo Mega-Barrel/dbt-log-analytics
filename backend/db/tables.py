@@ -1,16 +1,7 @@
 '''Creating Raw log data table'''
 
-import os
-from python_path import PythonPath
-
-from dotenv import load_dotenv
 from google.cloud import bigquery #pylint: disable=E0401
 from google.cloud.exceptions import NotFound
-
-path = os.path.join("..", "..")
-
-with PythonPath(path, relative_to = __file__):
-    from bq_client import client_oauth #pylint: disable=E0401
 
 def create_table(client, table_name, dataset_name):
     """Create table if not exist"""
@@ -36,11 +27,3 @@ def create_table(client, table_name, dataset_name):
         table = client.create_table(table)
         print(f'table {table.table_id} created.')
     return table
-
-if __name__ == '__main__':
-    load_dotenv()
-
-    bq_client = client_oauth('dbt_bigquery_creds.json')
-    DATASET_ID = os.environ.get('PROJECT_ID')
-    TABLE_NAME = 'raw_logs'
-    tlb = create_table(client=bq_client, dataset_name=DATASET_ID, table_name=TABLE_NAME)
