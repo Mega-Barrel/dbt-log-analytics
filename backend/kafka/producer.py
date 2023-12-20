@@ -4,7 +4,7 @@
 import os
 import time
 import json
-from random import choice
+from random import choice, randint
 from datetime import (
     datetime,
     timedelta
@@ -47,8 +47,8 @@ dictionary = {
 }
 
 # Define the start and end dates
-start_date = datetime(2023, 1, 1)
-end_date = datetime(2023, 11, 24)
+start_date = datetime(2023, 2, 2)
+end_date = datetime(2023, 12, 20)
 
 # Generate API log data
 API_REQ_NO = 1
@@ -57,34 +57,36 @@ API_REQ_NO = 1
 while start_date <= end_date:
 
     # Get the user agent string
+    user_name = fake.user_name()
     user_agent = fake.user_agent()
     ip_addr = fake.ipv4()
     request_type = choice(dictionary['request'])
     status_code_resp = choice(dictionary['statuscode'])
 
     data = {
+        'date': str(start_date),
         'ip_address': ip_addr,
         'user_agent': user_agent,
         'request_type': request_type,
         'status_code': status_code_resp,
-        'meta_data': {
-            'timestamp': str(start_date),
-            'api_req_no': API_REQ_NO
-        }
+        'api_req_no': API_REQ_NO,
+        'username': user_name
     }
 
     logger.info("Fake data generated.")
 
-    # Send data to defined Kafka topic
+    # Send data to defined  Kafka topic
     producer.send(KAFKA_TOPIC, data)
     producer.flush()
 
     logger.info("Data Produced with API_REQ_NO: %s", API_REQ_NO)
 
+    # sleep for x second
+    random_seconds = randint(800, 5000)
+
     # Increment the date and time by one minute
-    start_date += timedelta(minutes=1)
+    start_date += timedelta(minutes=random_seconds)
     API_REQ_NO += 1
 
-    # sleep for 1 second
-    time.sleep(5)
-    logger.info("Sleeping for 5 second")
+    logger.info("Sleeping for 2 second")
+    time.sleep(2)
