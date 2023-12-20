@@ -1,6 +1,9 @@
 # pycache folders
 __pycache__
 
+# vscode folder
+.vscode
+
 # environment folder
 dbt-log-env/
 
