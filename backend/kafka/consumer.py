@@ -1,7 +1,8 @@
 """Kafka Consumer"""
 
-import json
 import os
+import json
+import time
 
 from dotenv import load_dotenv
 from kafka import KafkaConsumer # pylint: disable=E0611
@@ -40,8 +41,6 @@ def main(client, consumer, kafka_topic, table):
             insert_data_json(client, table, json_data)
         except ClientError as error:
             print(f'Error occured while inserting record, More detail on error: {error}')
-        print(data)
-        print()
 
 if __name__ == '__main__':
     load_dotenv()
@@ -67,6 +66,17 @@ if __name__ == '__main__':
     dataset = project_name + '.' + project_id + '.' + TABLE_NAME
 
     # creating raw_logs table
-    create_table(client=bq_client, table_name=TABLE_NAME, dataset_name=project_id)
+    create_table(
+        client=bq_client,
+        table_name=TABLE_NAME,
+        dataset_name=project_id
+    )
+    time.sleep(2)
+
     # call the main funtion
-    main(client=bq_client, consumer=kf_consumer, kafka_topic=KAFKA_TOPIC, table=dataset)
+    main(
+        client=bq_client,
+        consumer=kf_consumer,
+        kafka_topic=KAFKA_TOPIC,
+        table=dataset
+    )
