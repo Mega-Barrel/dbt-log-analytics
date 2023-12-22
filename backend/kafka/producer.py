@@ -47,8 +47,8 @@ dictionary = {
 }
 
 # Define the start and end dates
-start_date = datetime(2023, 2, 2)
-end_date = datetime(2023, 12, 20)
+start_date = datetime(2023, 1, 2)
+end_date = datetime(2023, 6, 20)
 
 # Generate API log data
 API_REQ_NO = 1
@@ -82,10 +82,10 @@ while start_date <= end_date:
     logger.info("Data Produced with API_REQ_NO: %s", API_REQ_NO)
 
     # sleep for x second
-    random_seconds = randint(800, 5000)
+    random_seconds = randint(800, 1000)
 
     # Increment the date and time by one minute
-    start_date += timedelta(minutes=random_seconds)
+    start_date += timedelta(seconds=random_seconds)
     API_REQ_NO += 1
 
     logger.info("Sleeping for 2 second")
