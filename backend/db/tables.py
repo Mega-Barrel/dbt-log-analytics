@@ -66,6 +66,5 @@ def create_table(client, table_name, dataset_name):
             )
         ]
         table = bigquery.Table(table_ref, schema=schema)
-        table.partitioning_type = "DAY"
         table = client.create_table(table)
         logger.info('table %s created.', table.table_id)
