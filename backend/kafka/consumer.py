@@ -34,7 +34,6 @@ def main(client, consumer, kafka_topic, table):
             'user_agent': data['user_agent'],
             'request_type': data['request_type'],
             'status_code': data['status_code'],
-            'api_req_no': data['api_req_no'],
             'username': data['username']
         }
         try:
@@ -71,6 +70,7 @@ if __name__ == '__main__':
         table_name=TABLE_NAME,
         dataset_name=project_id
     )
+    logger.info('Slepping for 2 seconds....')
     time.sleep(2)
 
     # call the main funtion

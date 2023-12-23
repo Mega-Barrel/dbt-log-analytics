@@ -47,11 +47,8 @@ dictionary = {
 }
 
 # Define the start and end dates
-start_date = datetime(2023, 1, 2)
+start_date = datetime(2023, 1, 1)
 end_date = datetime(2023, 6, 20)
-
-# Generate API log data
-API_REQ_NO = 1
 
 # Loop through the dates minute by minute
 while start_date <= end_date:
@@ -69,7 +66,6 @@ while start_date <= end_date:
         'user_agent': user_agent,
         'request_type': request_type,
         'status_code': status_code_resp,
-        'api_req_no': API_REQ_NO,
         'username': user_name
     }
 
@@ -79,14 +75,13 @@ while start_date <= end_date:
     producer.send(KAFKA_TOPIC, data)
     producer.flush()
 
-    logger.info("Data Produced with API_REQ_NO: %s", API_REQ_NO)
+    logger.info("Data Produced by Kafka Producer..")
 
     # sleep for x second
-    random_seconds = randint(800, 1000)
+    random_seconds = randint(850, 1200)
 
     # Increment the date and time by one minute
     start_date += timedelta(seconds=random_seconds)
-    API_REQ_NO += 1
 
     logger.info("Sleeping for 2 second")
     time.sleep(2)
