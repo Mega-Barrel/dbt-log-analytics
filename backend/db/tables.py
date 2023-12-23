@@ -55,11 +55,6 @@ def create_table(client, table_name, dataset_name):
                 description='Statuscode of API request'
             ),
             bigquery.SchemaField(
-                'api_req_no', 
-                'STRING', 
-                description='API request number'
-            ),
-            bigquery.SchemaField(
                 'username', 
                 'STRING', 
                 description='Username'
