@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: log_data
+    schema: dbt_log_analytics
+    tables:
+      - name: raw_logs
+        config:
+          dataset: custom
+        identifier: raw_logs
+        columns:
+          - name: date
+          - name: ip_address
+          - name: user_agent
+          - name: request_type
+          - name: status_code
+          - name: username
