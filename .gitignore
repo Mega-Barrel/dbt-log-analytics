@@ -12,3 +12,6 @@ dbt-log-env/
 
 # BigQuery Service Account Creds
 dbt_bigquery_creds.json
+
+# dbt logs
+logs/dbt.log
