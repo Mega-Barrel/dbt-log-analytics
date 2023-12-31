@@ -2,8 +2,8 @@
 
 {{ 
     config(
-        materialized='table',
-        alias='staging_data'
+        materialized='view',
+        alias='cleaned_logs_data'
     )
 }}
 
